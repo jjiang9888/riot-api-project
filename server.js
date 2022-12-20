@@ -1,26 +1,28 @@
+import db from './db/connection.js';
 import express from 'express';
+import cors from 'cors';
+import logger from 'morgan';
+import chalk from 'chalk';
+import routes from './routes/index.js';
 
 const app= express();
-const port= 3000;
+const PORT= 3000;
 
-const api_url = "https://na.api.riotgames.com/lol/summoner/v4/summoners/by-name/{HotAsianGirl69}";
+app.use(express.json());
+app.use(cors());
+app.use(logger("dev"));
 
-async function getapi(url) {
-    
-    // Storing response
-    const response = await fetch(url);
-    
-    // Storing data in form of JSON
-    var data = await response.json();
-    console.log(data);
-    if (response) {
-        hideloader();
-    }
-    show(data);
-}
-// Calling that async function
-getapi(api_url);
+app.use("/summoner", routes);
 
-function hideloader() {
-    document.getElementById('loading').style.display = 'none';
-};
+
+db.on("connected", ()=> {
+    console.clear();
+    console.log(chalk.blue("Connected to database"));
+    app.listen(PORT, () => {
+        console.log(
+          `See SUMMONER data at http://localhost:${PORT}`
+        );
+      });
+    });
+
+
