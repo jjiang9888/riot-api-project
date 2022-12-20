@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(cors());
 app.use(logger("dev"));
 
-app.use("/summoner", routes);
+app.use("/", routes);
 
 
 db.on("connected", ()=> {
@@ -24,5 +24,3 @@ db.on("connected", ()=> {
         );
       });
     });
-
-

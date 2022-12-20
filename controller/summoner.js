@@ -1,14 +1,31 @@
 import Summoner from "../models/Summoner.js";
 
-export const getSummoner = async (req, res) => {
+
+export const getSummoners = async (req, res) => {
   try {
-    const summoner = await Summoner.find();
-    res.json(summoner);
+    const summoners = await Summoner.find();
+    res.json(summoners);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: error.message });
   }
 };
+
+export const getSummoner = async (req, res) => {
+    try {
+      const { id } = req.params;
+      const summoner = await Summoner.findById(id);
+  
+      if (summoner) {
+        return res.json(summoner);
+      }
+  
+      res.status(404).json({ message: "Summoner not found!" });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: error.message });
+    }
+  };
 
 export const createSummoner = async (req, res) => {
   try {
