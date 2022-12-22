@@ -10,5 +10,3 @@ fetch(`https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/HotAsianG
         fsPromises.writeFile("./seed/SummonerData.json", JSON.stringify(data))
    })
    .catch(error => console.error(error));
-
-
