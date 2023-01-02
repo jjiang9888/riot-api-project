@@ -29,4 +29,4 @@ Deleting a player profile
 
 ## Deployment ## 
 
-Deployed to Railway with connection to Mongodb cloud. 
+Deployed to Railway with connection to Mongodb cloud. Run railway npm install as root user thru use of sudo command. 
