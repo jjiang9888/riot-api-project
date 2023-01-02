@@ -18,10 +18,10 @@ Create a model based on the object properties of the player profile data fetched
 ## CRUD ##
 
 Creating fake player profiles based on model schema
-![Updating database with additional fake player]images/API-POST Update.png
+<img src="images/API-POST.png" alt="Adding and editing players" title="Adding player">
 
 Deleting a player profile
-![Added and then deleted another fake player]images/API-DELETE.png
+<img src="images/API-DELETE.png" alt="Deleting player" title="Removing player">
 
 ## Deployment ## 
 
