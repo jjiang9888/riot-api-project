@@ -16,9 +16,9 @@ An initial roadblock in accessing the raw data came from the use of the RIOT API
 Create a model based on the object properties of the player profile data fetched from RIOT API. Establish connection to MongoDB cloud. Create controllers for use in routes. Seed the database with the fetched data. Routes for CRUD interaction on browser.
 
 ## CRUD ##
-<div>! [Updating database with additional fake player] /images/API-POST Update.png<div>
+<div>![Updating database with additional fake player]images/API-POST Update.png<div>
 
-<div>! [Added and then deleted another fake player] /images/API-DELETE.png <div>
+<div>![Added and then deleted another fake player]images/API-DELETE.png <div>
 
 ## Deployment ## 
 
