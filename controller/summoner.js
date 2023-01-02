@@ -1,7 +1,7 @@
 import Summoner from "../models/Summoner.js";
 
 
-export const getSummoners = async (req, res) => {
+export const getSummoners = async (req, res) => {     //Get all summoners
   try {
     const summoners = await Summoner.find();
     res.json(summoners);
@@ -11,7 +11,7 @@ export const getSummoners = async (req, res) => {
   }
 };
 
-export const getSummoner = async (req, res) => {
+export const getSummoner = async (req, res) => {    //Get specific summoner ID
     try {
       const { id } = req.params;
       const summoner = await Summoner.findById(id);
@@ -27,7 +27,7 @@ export const getSummoner = async (req, res) => {
     }
   };
 
-export const createSummoner = async (req, res) => {
+export const createSummoner = async (req, res) => {  //Create a new summoner
   try {
     const summoner = new Summoner(req.body);
     await summoner.save();
@@ -38,7 +38,7 @@ export const createSummoner = async (req, res) => {
   }
 };
 
-export const updateSummoner = async (req, res) => {
+export const updateSummoner = async (req, res) => {    //Update a specific summoner info by ID
   try {
     const { id } = req.params;
     const summoner = await Summoner.findByIdAndUpdate(id, req.body);
@@ -49,7 +49,7 @@ export const updateSummoner = async (req, res) => {
   }
 };
 
-export const deleteSummoner = async (req, res) => {
+export const deleteSummoner = async (req, res) => {  //Delete a summoner
   try {
     const { id } = req.params;
     const deleted = await Summoner.findByIdAndDelete(id);
