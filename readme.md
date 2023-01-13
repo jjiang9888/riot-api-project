@@ -1,7 +1,7 @@
 # Intro #
 As a longtime League of Legends RTS player who has used 3rd party API applications to get information about players while in lobby, I decided to create my own API based on the RIOT API. 
 
-riot-api-project-production.up.railway.app
+[riot-api-project-production.up.railway.app](https://riot-api-project-production.up.railway.app/)
 
 ## Initializing ##
 * npm init -y 
