@@ -1,34 +1,35 @@
 # Intro #
-As a longtime League of Legends RTS player who has used 3rd party API applications to get information about players while in lobby, I decided to create my own API based on the RIOT API. 
+JSON API built with express and mongoose with CRUD functionality and RESTful routes. 
 
-[riot-api-project-production.up.railway.app](https://riot-api-project-production.up.railway.app/)
+https://riot-api-project-production.up.railway.app/
+
+https://riot-api-project-production.up.railway.app/champions
 
 ## Initializing ##
-* npm init -y 
-* gitignore
-* npm install mongoose express chalk cors morgan 
-* "type":"module" in package.json to allow import and export of variables for modules
-* npm i nodmeon --save -dev
-* Add in package.json scripts - start, dev, and db:seed to allow for easier npm run dev
-* npm install dotenv for environment variables
-* npm i -g @railway/cli to seed deployed application 
-* login to railway and link repo to railway 
+* Run npm db:seed to seed within localhost. 
+* Run nodemon server.js to open server within localhost. 
+* Root directory is at http://localhost:3000/
+* Full list is at http://localhost:3000/champions
+* CRUD functionality by id using http://localhost:3000/:id
 
 ## Fetching the API ##
-An initial roadblock in accessing the raw data came from the use of the RIOT API itself. Normally, RIOT allows developers to sign up for developer status in order to access the API permanently but at time of writing, RIOT was not accepting applications during the holidays. Luckily, RIOT still allows access thru temporary developer keys on a 24 hour basis. fetch.js currently has a riotkey variable that needs to be manually updated in order to refresh the fetched data. 
+Initial version of project was to fetch summoner profile by using RIOT API developer key but for the sake of accessibility, it only allows fetching for private data. Reiterated project version to fetch champion data from general API. 
 
-## Using the API data ##
-Create a model based on the object properties of the player profile data fetched from RIOT API. Establish connection to MongoDB cloud. Create controllers for use in routes. Seed the database with the fetched data. Routes for CRUD interaction on browser.
 
 ## CRUD ##
 CRUD functions tested within POSTman
 
-Creating fake player profiles based on model schema
-<img src="images/API-POST.png" alt="Adding and editing players" title="Adding player">
+Get list of all champions in directory
+<img src="images/GET.png" alt="Get champions" title="Get champions">
 
-Deleting a player profile
-<img src="images/API-DELETE.png" alt="Deleting player" title="Removing player">
+Post a fake champion entry
+<img src="images/POST.png" alt="Adding myself" title="Adding player">
 
-## Deployment ## 
+Update an entry 
+<img src="images/PUT.png" alt="Ahri OX" title="Ahri update">
 
-Deployed to Railway with connection to Mongodb cloud. Run railway npm install as root user thru use of sudo command. 
+Deleting Previous entry
+<img src="images/DELETE.png" alt="delete ahri" title="delete ahri">
+
+
+
