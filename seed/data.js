@@ -1,11 +1,11 @@
 import db from "../db/connection.js";
-import Summoner from "../models/Summoner.js";
-import summoner from "./SummonerData.json" assert {type:'json'};
+import Champion from "../models/Champion.js";
+import championdata from "./ChampionData.json" assert {type:'json'};
 
 const insertData =  async () => {
     await db.dropDatabase();
 
-    await Summoner.create(summoner);
+    await Champion.create(championdata);
 
     await db.close();
 };

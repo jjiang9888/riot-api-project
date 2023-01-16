@@ -21,7 +21,7 @@ db.on("connected", ()=> {
     console.log(chalk.blue("Connected to database"));
     app.listen(PORT, () => {
         console.log(
-          `See SUMMONER data at ${PORT}`
+          `See Champion data at ${PORT}`
         );
       });
     });
